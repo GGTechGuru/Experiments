@@ -11,7 +11,6 @@ module Stripe
   class StripeObject
 
     @@permanentAttributes = nil
-
     @@nestedUpdatableAttributes = nil
 
     def initialize()
@@ -26,6 +25,20 @@ module Stripe
       )
 
     end # initialize()
+
+    ######################
+
+    _opts = nil
+    _values = nil
+    _unsavedValues = nil
+    _transientValues = nil
+    _retrieveOptions = nil
+
+    ######################
+
+    def _construct( id = nil, opts = nil )
+      this._opts = opts ? opts : Util.newRequestOptions()  # Add
+    end # _construct
 
     ######################
 
